@@ -8,7 +8,7 @@ RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak \
     && echo "# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free">>/etc/apt/sources.list \
     && echo "deb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free">>/etc/apt/sources.list \
     && echo "# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free">>/etc/apt/sources.list \
-    && apt-get update && apt-get install -y \
+    && apt-get update && apt-get install -y  --allow-downgrades \
         libsasl2-2=2.1.27+dfsg-1+deb10u2 \
         libssl1.1=1.1.1n-0+deb10u3 \
         zlib1g=1:1.2.11.dfsg-1+deb10u2 \
