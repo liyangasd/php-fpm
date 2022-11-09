@@ -10,7 +10,9 @@ RUN apt-get update && apt-get install -y  \
         libssl-dev git \
     && git clone https://github.com/cdoco/php-jwt.git /tmp/php-jwt \
     && cd /tmp/php-jwt && phpize && ./configure && make && make install \
-    && pecl install igbinary memcache redis \
+    && pecl install igbinary \ 
+    && pecl install memcache \
+    && pecl install redis \
     && docker-php-ext-enable memcache redis jwt \
     && docker-php-ext-install -j$(nproc) mysqli pdo pdo_mysql opcache zip \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
