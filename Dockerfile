@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y  \
     && git clone https://github.com/cdoco/php-jwt.git /tmp/php-jwt \
     && cd /tmp/php-jwt && phpize && ./configure && make && make install \
     && pecl install igbinary \ 
-    && pecl install memcache \
+    && pecl install https://pecl.php.net/get/memcache-4.0.5.2.tgz \
     && pecl install redis \
     && docker-php-ext-enable memcache redis jwt \
     && docker-php-ext-install -j$(nproc) mysqli pdo pdo_mysql opcache zip \
